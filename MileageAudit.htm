@@ -1,0 +1,68 @@
+<!DOCTYPE html> 
+
+<html>  
+	<head> 
+		<meta charset = "utf-8"> 
+		<title>Mileage Audit</title> 
+	  
+		<style>
+			#inputTextToSave {
+				-webkit-box-sizing: border-box;
+				   -moz-box-sizing: border-box;
+						box-sizing: border-box;
+						
+				width: 100%;
+				white-space: pre;
+				overflow-x: scroll;
+			}
+			
+			#rosterDiv {
+				margin-top: 5px;
+				border: 1px inset #ccc;
+				background-color: white;
+				font-family: Courier New;
+				width: 100%;
+				height: 200px; /* or whatever measurements you want */
+				overflow: auto; /* in most browsers, this will results in a scrollbar when there's more content than can fit in the dimensions defined above */
+			}
+		</style>
+	</head> 
+  
+	<body> 
+		<span style="display: inline-block; width: 150px;">Load Roster:</span>
+		<input type="file" id="roster" name="roster" />
+		<div id="rosterDiv"></div> 
+		
+		<hr />
+		
+		<article> 
+			<span style="display: inline-block; width: 150px;">Load iSell Export:</span>
+			<input type="file" id="files" name="file" />
+			
+			<section>
+				<table style="width: 100%;">
+					<tr>
+						<td colspan="3">
+							<textarea id="inputTextToSave" rows="20" readonly></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<span>Filename to Save As:</span>
+							<input id="inputFileNameToSaveAs" style="width: 300px;"></input>
+							<button onclick="saveTextAsFile()">Save Text to File</button>
+						</td>
+					</tr>
+				</table>
+			</section>
+		</article> 
+
+		<div id="output" style="font-family: Courier New;" ></div> 
+		<hr />
+		<div id="error" style="font-family: Courier New; color: red;"></div> 
+      
+		<footer>Mileage Audit - v 1.0</footer> 
+		
+		<script src="MileageChecker.js"></script>
+	</body>
+</html>
