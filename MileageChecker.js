@@ -294,7 +294,7 @@ function parseTravelLog() {
 }
 
 async function getMileage(origin, destination, return_travel, cline_tokens) {
-	let url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&mode=driving&origins=" + origin.replace(/[\s,]/g, "+") + "&destinations=" + destination.replace(/[\s,]/g, "+") + "&key=AIzaSyBPgKXltI08qG-WDqQ8F_99liSj25zRbR4";
+	let url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&mode=driving&origins=" + origin.replace(/[\s,]/g, "+") + "&destinations=" + destination.replace(/[\s,]/g, "+") + "&key=";
 		
 	const response = await fetch(url);
 	const data = await response.json();
