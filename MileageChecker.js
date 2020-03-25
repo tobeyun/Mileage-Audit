@@ -13,12 +13,7 @@ const INDEX_LOCATION = 11;
 const INDEX_CTC = 12;
 const INDEX_DATE = 13;
 
-const ROSTER_FILE = "Roster.txt";
-const OUT_FILE =  "MileageResults.csv";
-
-const ORIGIN_URL = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&mode=driving&origins=";
-const DESTINATION_URL = "&destinations=";
-const KEY_URL = "&key=";
+const API_KEY = "";	// distance matrix API key from Google
 
 var home = {};
 var origin = "";
@@ -294,7 +289,7 @@ function parseTravelLog() {
 }
 
 async function getMileage(origin, destination, return_travel, cline_tokens) {
-	let url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&mode=driving&origins=" + origin.replace(/[\s,]/g, "+") + "&destinations=" + destination.replace(/[\s,]/g, "+") + "&key=";
+	let url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&mode=driving&origins=" + origin.replace(/[\s,]/g, "+") + "&destinations=" + destination.replace(/[\s,]/g, "+") + "&key=" + API_KEY;
 		
 	const response = await fetch(url);
 	const data = await response.json();
